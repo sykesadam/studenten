@@ -1,0 +1,132 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1{
+  color: #fff;
+  text-align: center;
+  font-size: 74px;
+  letter-spacing: 10px;
+  font-family: 'Ultra', serif;
+}
+main {
+  position: relative;
+  height: 100%;
+  width: 100%; 
+}
+main::after{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 75;
+  background: rgba(0, 0, 0, 0.85);
+  
+  content: "";
+  top: 0;
+}
+/*img {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}*/
+
+.img-wrap {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+}
+.side-cont {
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+}
+.img-wrap img {
+  width: 25%;
+  height: 100%;
+  z-index: 50;
+}
+.sideways{
+  display: flex;
+  height: 50%;
+  width: 100%;
+  
+}
+.sideways img {
+  height: 100%;
+  flex-grow: 1;
+}
+.img-wrap img:first-child, .img-wrap img:last-child{
+  width: 20%;
+}
+#del-countdown{
+  font-family: 'Megrim', cursive;
+  position: relative;
+  display: flex;
+  z-index: 100;
+  width: 900px;
+  top: 30%;
+  margin: auto;
+  flex-flow: column;
+}
+#clock {
+  display: flex;
+  flex-flow: row;
+}
+#clock span {
+  text-align: center;
+  font-size: 84px;
+  margin: 0 2.5%;
+  color: #fff;
+  padding: 20px;
+  width: 20%;
+  border-radius: 15px;
+  
+  box-sizing: border-box;
+}
+
+#clock span:nth-child(1){
+  background: #dc143c;
+  box-shadow: 7px 5px 1px #33050E;
+}
+#clock span:nth-child(2){
+  background: #008080;
+  box-shadow: 7px 5px 1px #002424;
+}
+#clock span:nth-child(3){
+  background: #ff4500;
+  box-shadow: 7px 5px 1px #521600;
+}
+#clock span:nth-child(4){
+  background: #2dcb74;
+  box-shadow: 7px 5px 1px #0F4527;
+}
+#units {
+  display: flex;
+}
+#units span {
+  width: 25%;
+  text-align: center;
+  margin-top: 30px;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7);
+}
+
+span.turn{
+  animation: turn 0.7s ease-in forwards;
+}
+
+/*@keyframes turn{
+  0%{
+    transform: rotateX(0deg);
+  }
+  100%{
+    transform: rotateX(360deg);
+  }
+}*/
