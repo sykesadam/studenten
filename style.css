@@ -59,7 +59,7 @@ main::after{
   height: 100%;
   flex-grow: 1;
 }
-.img-wrap img:first-child, .img-wrap img:last-child{
+.first-img, .last-img{
   width: 20%;
 }
 #del-countdown{
@@ -118,15 +118,19 @@ main::after{
   text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7);
 }
 
-span.turn{
-  animation: turn 0.7s ease-in forwards;
+@media screen and (max-width: 1000px){
+  .first-img, .last-img{
+    display: none;
+  }
+  .side-cont{
+    width: 100%;
+  }
 }
 
-/*@keyframes turn{
-  0%{
-    transform: rotateX(0deg);
+@media screen and (max-width: 480){
+  .side-cont img:first-child, .side-cont img:last-child{
+    display: none;
   }
-  100%{
-    transform: rotateX(360deg);
-  }
-}*/
+}
+
+
