@@ -19,13 +19,6 @@ function startTimer(id, deadline){
                     + '<span>' + timer.minutes + '</span>'
                     + '<span>' + timer.seconds + '</span>';
 
-    //animations
-    var spans = clock.getElementsByTagName("span");
-    animateClock(spans[3]);
-    if(timer.seconds == 59) animateClock(spans[2]);
-    if(timer.minutes == 59 && timer.seconds == 59) animateClock(spans[1]);
-    if(timer.hours == 23 && timer.minutes == 58 && timer.seconds == 59) animateClock(spans[0]);
-
     //check for end of timer
     if (timer.total < 1){
       clearInterval(timerInterval);
