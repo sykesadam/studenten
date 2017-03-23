@@ -32,6 +32,10 @@ h1{
   font-size: 74px;
   letter-spacing: 10px;
   font-family: 'Ultra', serif;
+  span{
+    text-shadow: 2px 2px 2px rgba(14, 103, 194, 0.6),
+    4px 4px rgba(14, 103, 194, 0.6);
+  }
   @media screen and (max-width: 900px){
       font-size: 50px;
   }
@@ -134,30 +138,30 @@ main {
         width: 20%;
         border-radius: 15px;
         box-sizing: border-box;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.75);
         &:nth-child(1){
             background: #dc143c;
-            box-shadow: 7px 5px 1px #33050E;
+            box-shadow: 6px 5px #33050E;
         }
         &:nth-child(2){
-            background: #008080;
-            box-shadow: 7px 5px 1px #002424;
+            background: #0E67C2;
+            box-shadow: 6px 5px #052342;
         }
         &:nth-child(3){
             background: #ff4500;
-            box-shadow: 7px 5px 1px #521600;
+            box-shadow: 6px 5px #521600;
         }
         &:nth-child(4){
             background: #2dcb74;
-            box-shadow: 7px 5px 1px #0F4527;
+            box-shadow: 6px 5px #0F4527;
         }
         @media screen and (max-width: 900px){
             font-size: 28px;
-            // width: 15%;
+            padding: 4% 0;
         }
     }
     
 }
-
 
 #units {
   display: flex;
@@ -169,7 +173,7 @@ main {
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
-    text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7);
+    text-shadow: 2px 1px rgba(10, 10, 10, 0.7);
     }
 }
 

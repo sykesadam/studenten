@@ -23,8 +23,8 @@ function startTimer(id, deadline){
       //check for end of timer
       if (timer.total < 1){
         clearInterval(timerInterval);
-        cont.innerHTML = `<h1>🎉STUDENTEN🎉</h1>
-                          <h3>2017</h3>
+        cont.innerHTML = `<h1>🎉<span>STUDENTEN</span>🎉</h1>
+                          <h3>dax att fira, hämta skumpan</h3>
                           <div class="pyro">
                             <div class="before"></div>
                             <div class="after"></div>
