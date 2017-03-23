@@ -1,0 +1,129 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 74px;
+  letter-spacing: 10px;
+  font-family: 'Ultra', serif; }
+  @media screen and (max-width: 900px) {
+    h1 {
+      font-size: 50px; } }
+  @media screen and (max-width: 650px) {
+    h1 {
+      font-size: 35px; } }
+
+main {
+  position: relative;
+  height: 100vh;
+  width: 100vw; }
+  main::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 75;
+    background: rgba(0, 0, 0, 0.65);
+    content: "";
+    top: 0; }
+
+.img-wrap {
+  box-sizing: border-box;
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  z-index: 50; }
+  .img-wrap img {
+    width: 25%;
+    height: 100%;
+    z-index: 50; }
+
+.side-cont {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  width: 60%; }
+
+.sideways {
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
+  width: 100%; }
+  .sideways img {
+    height: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+
+.first-img, .last-img {
+  width: 20%; }
+
+#del-countdown {
+  font-family: 'Megrim', cursive;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 100;
+  width: 900px;
+  top: 30%;
+  margin: auto;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  max-width: 100%; }
+
+#clock {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+  flex-flow: row; }
+  #clock span {
+    text-align: center;
+    font-size: 84px;
+    margin: 0 2.5%;
+    color: #fff;
+    padding: 20px;
+    width: 20%;
+    border-radius: 15px;
+    box-sizing: border-box; }
+    #clock span:nth-child(1) {
+      background: #dc143c;
+      box-shadow: 7px 5px 1px #33050E; }
+    #clock span:nth-child(2) {
+      background: #008080;
+      box-shadow: 7px 5px 1px #002424; }
+    #clock span:nth-child(3) {
+      background: #ff4500;
+      box-shadow: 7px 5px 1px #521600; }
+    #clock span:nth-child(4) {
+      background: #2dcb74;
+      box-shadow: 7px 5px 1px #0F4527; }
+    @media screen and (max-width: 900px) {
+      #clock span {
+        font-size: 28px; } }
+
+#units {
+  display: -ms-flexbox;
+  display: flex; }
+  #units span {
+    width: 25%;
+    text-align: center;
+    margin-top: 30px;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7); }
+
+@media screen and (max-width: 1400px) {
+  .first-img, .last-img {
+    display: none; }
+  .side-cont {
+    width: 100%; } }
+
+@media screen and (max-width: 700px) {
+  .side-cont img:first-child, .side-cont img:last-child {
+    display: none; } }

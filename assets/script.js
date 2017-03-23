@@ -1,5 +1,5 @@
 function updateTimer(deadline){
-  var time = deadline - new Date();
+  const time = deadline - new Date();
   return {
     'days': Math.floor( time/(1000*60*60*24) ),
     'hours': Math.floor( (time/(1000*60*60)) % 24 ),
@@ -10,9 +10,9 @@ function updateTimer(deadline){
 }
 
 function startTimer(id, deadline){
-  var timerInterval = setInterval(function(){
-    var clock = document.getElementById(id);
-    var timer = updateTimer(deadline);
+  const timerInterval = setInterval( () => {
+    const clock = document.getElementById(id);
+    const timer = updateTimer(deadline);
 
     clock.innerHTML = '<span>' + timer.days + '</span>'
                     + '<span>' + timer.hours + '</span>'
@@ -28,7 +28,7 @@ function startTimer(id, deadline){
   }, 1000);
 }
 
-window.onload = function(){
-  var deadline = new Date("Juni 9, 2017 12:00:00");
+window.onload = () => {
+  const deadline = new Date("Juni 9, 2017 12:00:00");
   startTimer("clock", deadline);
 }
