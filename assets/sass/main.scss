@@ -186,14 +186,27 @@ main {
   }
 }
 
-@media screen and (max-width: 700px){
-  .side-cont img:first-child, .side-cont img:last-child{
+@media screen and (max-width: 1000px){
+  .side-cont img:first-child, .side-cont img:last-child, .side-cont .sideways:nth-child(2) img:nth-child(2){
     display: none;
   }
+  .side-cont{
+      display: none;
+  }
+    .img-wrap{
+        img{
+            width: 100%;
+        }
+        .first-img{  
+            display: block;
+        }
+    }
+ 
 }
 
 .dance {
     z-index: 200;
     margin: 0 auto;
 }
+ 
 @import "fireworks/fireworks";
