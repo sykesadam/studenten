@@ -55,7 +55,7 @@ function startTimer(id, deadline) {
 
 
 window.onload = () => {
-  const deadline = new Date("June 8, 2017 00:00:00");
+  const deadline = new Date("June 9, 2017 07:00:00");
   startTimer("clock", deadline);
 }
 
