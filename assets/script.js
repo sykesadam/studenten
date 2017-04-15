@@ -34,7 +34,7 @@ function startTimer(id, deadline) {
                             <img src="assets/music/dancing.gif">
                           </div>
                           <audio id="myAudio" loop autoplay>
-                            // <source src="assets/music/celebrate.ogg" type="audio/ogg">
+                            <source src="assets/music/celebrate.ogg" type="audio/ogg">
                             <source src="assets/music/celebrate.mp3" type="audio/mpeg">
                           </audio>`;
       const myAudio = document.getElementById("myAudio");
@@ -55,7 +55,7 @@ function startTimer(id, deadline) {
 
 
 window.onload = () => {
-  const deadline = new Date("January 8, 2017 00:00:00");
+  const deadline = new Date("June 8, 2017 00:00:00");
   startTimer("clock", deadline);
 }
 
