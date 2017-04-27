@@ -1,26 +1,30 @@
 function updateTimer(deadline) {
   const time = deadline - new Date();
   return {
-    'days': Math.floor(time / (1000 * 60 * 60 * 24)),
-    'hours': Math.floor((time / (1000 * 60 * 60)) % 24),
-    'minutes': Math.floor((time / 1000 / 60) % 60),
-    'seconds': Math.floor((time / 1000) % 60),
-    'total': time
+    weeks: Math.floor(time / (1000 * 60 * 60 * 24) / 7),
+    days: Math.floor(time / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((time / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((time / 1000 / 60) % 60),
+    seconds: Math.floor((time / 1000) % 60),
+    total: time,
   };
 }
 
-function startTimer(id, deadline) {
+function startTimer(deadline) {
   const timerInterval = setInterval(() => {
-    const clock = document.getElementById(id);
+    const clock = document.getElementById('clock');
+    const weeks = document.getElementById('weeks');
     const cont = document.getElementById('del-countdown');
     const timer = updateTimer(deadline);
 
-    clock.innerHTML = '<span>' + timer.days + '</span>'
-      + '<span>' + timer.hours + '</span>'
-      + '<span>' + timer.minutes + '</span>'
-      + '<span>' + timer.seconds + '</span>';
+    clock.innerHTML = `<span>${timer.days}</span>
+                      <span>${timer.hours}</span>
+                      <span>${timer.minutes}</span>
+                      <span>${timer.seconds}</span>`;
 
-    //check for end of timer
+    weeks.innerHTML = `<span>${timer.weeks} weeks</span>`;
+
+    //  check for end of timer
     if (timer.total < 1) {
       clearInterval(timerInterval);
 
@@ -37,31 +41,32 @@ function startTimer(id, deadline) {
                             <source src="assets/music/celebrate.ogg" type="audio/ogg">
                             <source src="assets/music/celebrate.mp3" type="audio/mpeg">
                           </audio>`;
-      const myAudio = document.getElementById("myAudio");
-      const btn = document.getElementById("btn");
-
-      btn.addEventListener("click", toggleSound);
+      const myAudio = document.getElementById('myAudio');
+      const btn = document.getElementById('btn');
 
       function toggleSound() {
         if (myAudio.paused) {
           return myAudio.play();
-        } else {
-          return myAudio.pause();
         }
+        return myAudio.pause();
       }
+
+      btn.addEventListener('click', toggleSound);
     }
   });
 }
 
 
 window.onload = () => {
-  const deadline = new Date("June 9, 2017 07:00:00");
-  startTimer("clock", deadline);
-}
+  const deadline = new Date('June 9, 2017 07:00:00');
+  startTimer(deadline);
 
-[].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
-  img.setAttribute('src', img.getAttribute('data-src'));
-  img.onload = () => {
-    img.removeAttribute('data-src');
-  };
-});
+  [].forEach.call(document.querySelectorAll('img[data-src]'), (img) => {
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = () => {
+      img.removeAttribute('data-src');
+    };
+  });
+};
+
+
