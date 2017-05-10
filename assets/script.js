@@ -27,7 +27,6 @@ function startTimer(deadline) {
     //  check for end of timer
     if (timer.total < 1) {
       clearInterval(timerInterval);
-
       cont.innerHTML = `<h1>🎉<span>STUDENTEN</span>🎉</h1>                         
                           <h3>Hämta skumpan, dax att fira</h3>
                           <div class="pyro">
@@ -56,7 +55,6 @@ function startTimer(deadline) {
   });
 }
 
-
 window.onload = () => {
   const deadline = new Date('June 9, 2017 07:00:00');
   startTimer(deadline);
@@ -69,4 +67,21 @@ window.onload = () => {
   });
 };
 
+function playSound(e) {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return; // stops the function from running
+  audio.currentTime = 0; // rewind to the start baby
+  audio.play();
+  key.classList.add('playing');
+}
 
+function removeTransitions(e) {
+  if (e.propertyName !== 'transform') return; // skip it if its not a transofrm
+  this.classList.remove('playing');
+}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransitions));
+
+window.addEventListener('keydown', playSound);
